@@ -39,4 +39,5 @@ export const siteConfig = {
 			href: "/lost_and_found",
 		},
 	],
+	adminEmail:"susanoyole1234@gmail.com"
 };

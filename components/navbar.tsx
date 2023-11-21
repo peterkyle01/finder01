@@ -23,8 +23,6 @@ import { UserButton, currentUser } from "@clerk/nextjs";
 export const Navbar = async () => {
 	const user = await currentUser();
 
-	const adminEmail = "susanoyole1234@gmail.com";
-
 	return (
 		<NextUINavbar
 			
@@ -55,15 +53,6 @@ export const Navbar = async () => {
 							</NextLink>
 						</NavbarItem>
 					))}
-					<NavbarItem>
-						{user?.emailAddresses[0].emailAddress == adminEmail && (
-							<NextLink
-								color="success"
-								href="/admin">
-								Admin
-							</NextLink>
-						)}
-					</NavbarItem>
 				</ul>
 			</NavbarContent>
 			<NavbarContent
@@ -125,15 +114,6 @@ export const Navbar = async () => {
 						</NavbarMenuItem>
 					))}
 				</div>
-				<NavbarMenuItem>
-					{user?.emailAddresses[0].emailAddress == adminEmail && (
-						<NextLink
-							color="success"
-							href="/admin">
-							Admin
-						</NextLink>
-					)}
-				</NavbarMenuItem>
 				<NavbarMenuItem className="flex gap-2">
 					{!user && (
 						<>
