@@ -40,6 +40,10 @@ const columns = [
 		key: "date_found",
 		label: "DATE FOUND",
 	},
+	{
+		key: "phone_number",
+		label: "PHONE NUMBER",
+	},
 ];
 
 export default function FoundTable() {
@@ -67,34 +71,41 @@ export default function FoundTable() {
 
 	useEffect(() => {
 		let matchedFoundIDs = stateFoundIDs.filter((stateFoundID) =>
-			contains(stateFoundID.student_name, value)
+			contains(String(stateFoundID.student_adm), value)
 		);
 		setFilteredFoundIDs(matchedFoundIDs!);
 	}, [value]);
 
 	return (
 		<>
-			<Input
-				className="md:w-1/2 my-2"
-				aria-label="Search"
-				classNames={{
-					inputWrapper: "bg-default-100",
-					input: "text-sm",
-				}}
-				endContent={
-					<Kbd
-						className="hidden lg:inline-block"
-						keys={["command"]}>
-						K
-					</Kbd>
-				}
-				labelPlacement="outside"
-				placeholder="Student name..."
-				startContent={<Search size={18} />}
-				type="search"
-				//@ts-ignore
-				onChange={(e) => setValue(e.target.value)}
-			/>
+			<div className="flex flex-col sm:flex-row">
+				<Input
+					className="md:w-1/2 my-2"
+					aria-label="Search"
+					classNames={{
+						inputWrapper: "bg-default-100",
+						input: "text-sm",
+					}}
+					endContent={
+						<Kbd
+							className="hidden lg:inline-block"
+							keys={["command"]}>
+							K
+						</Kbd>
+					}
+					labelPlacement="outside"
+					placeholder="Student admission number..."
+					startContent={<Search size={18} />}
+					type="search"
+					//@ts-ignore
+					onChange={(e) => setValue(e.target.value)}
+				/>
+				<div className="md:w-1/2 flex justify-center items-center">
+					<h1 className="font-serif italic font-black">
+						N/B : Call the student
+					</h1>
+				</div>
+			</div>
 			{value.length > 0 ? (
 				<Table
 					aria-label="Table of found IDs"

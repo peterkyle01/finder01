@@ -11,6 +11,7 @@ export type lostIDType = {
 	time_lost: string;
 	location_lost: string;
 	date_lost: string;
+	phone_number: number
 };
 
 export type foundIDType = {
@@ -20,6 +21,7 @@ export type foundIDType = {
 	time_found: string;
 	location_found: string;
 	date_found: string;
+	phone_number: number;
 };
 
 

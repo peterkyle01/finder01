@@ -1,9 +1,4 @@
-import {
-	mysqlTable,
-	varchar,
-	int,
-	time,
-} from "drizzle-orm/mysql-core";
+import { mysqlTable, varchar, int, time } from "drizzle-orm/mysql-core";
 
 export const lostId = mysqlTable("lostId", {
 	id: int("id").primaryKey().autoincrement(),
@@ -12,6 +7,7 @@ export const lostId = mysqlTable("lostId", {
 	time_lost: time("time_lost"),
 	location_lost: varchar("location_lost", { length: 254 }),
 	date_lost: varchar("date_lost", { length: 254 }),
+	phone_number: int("phone_number"),
 });
 
 export const foundId = mysqlTable("foundId", {
@@ -21,4 +17,5 @@ export const foundId = mysqlTable("foundId", {
 	time_found: time("time_found"),
 	location_found: varchar("location_found", { length: 254 }),
 	date_found: varchar("date_found", { length: 254 }),
+	phone_number: int("phone_number"),
 });

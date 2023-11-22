@@ -12,6 +12,7 @@ import {
 	Timer,
 	MapPin,
 	Calendar,
+	Phone,
 } from "lucide-react";
 import { toast } from "sonner";
 import EditLost from "./EditLost";
@@ -48,7 +49,7 @@ export default function EditLostPage() {
 			{lostIDs &&
 				lostIDs.map((lostID) => (
 					<div
-						className="bg-primary w-full h-44 rounded-md p-2 font-serif font-bold"
+						className="bg-primary w-full h-48 rounded-md p-2 font-serif font-bold"
 						key={lostID.id}>
 						<h1 className="flex justify-start items-center gap-2">
 							<User
@@ -85,7 +86,14 @@ export default function EditLostPage() {
 							/>
 							{lostID.date_lost}
 						</p>
-						<div className="flex gap-2">
+						<p className="flex justify-start items-center gap-2">
+							<Phone
+								color="white"
+								size={15}
+							/>
+							{lostID.phone_number}
+						</p>
+						<div className="flex gap-2 my-2">
 							<EditLost id={lostID.id!} />
 							<Button
 								size="sm"

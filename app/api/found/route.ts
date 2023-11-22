@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
 		time_found: foundIdJson.time_found,
 		location_found: foundIdJson.location_found,
 		date_found: foundIdJson.date_found,
+		phone_number: foundIdJson.phone_number
 	});
 
 	return NextResponse.json({ message: "Created a Found ID!" });
@@ -32,6 +33,7 @@ export async function PATCH(request: NextRequest) {
 		time_found,
 		location_found,
 		date_found,
+		phone_number
 	}: foundIDType = await request.json();
 
 	await db
@@ -42,6 +44,7 @@ export async function PATCH(request: NextRequest) {
 			time_found: time_found,
 			location_found: location_found,
 			date_found: date_found,
+			phone_number: phone_number
 		})
 		.where(eq(foundId.id, id));
 	return NextResponse.json({ message: "Updated successfully!" });

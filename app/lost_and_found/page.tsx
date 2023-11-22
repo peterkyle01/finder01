@@ -40,7 +40,6 @@ async function getLostAndFoundIDs() {
 
 export default async function LostAndFound() {
 	const lostAndFoundIDs = await getLostAndFoundIDs();
-	console.log(lostAndFoundIDs);
 	return (
 		<div className="w-full h-[100dvh]">
 			<LostAndFoundTable lostIDs={lostAndFoundIDs} />

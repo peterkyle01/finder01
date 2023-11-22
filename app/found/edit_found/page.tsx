@@ -11,6 +11,7 @@ import {
 	Timer,
 	MapPin,
 	Calendar,
+	Phone,
 } from "lucide-react";
 import { toast } from "sonner";
 import EditFound from "./EditFound";
@@ -18,7 +19,7 @@ import EditFound from "./EditFound";
 export default function EditFoundPage() {
 	const queryClient = useQueryClient();
 
-	const { data:foundIDs } = useQuery({
+	const { data: foundIDs } = useQuery({
 		queryKey: ["getEditFoundID"],
 		queryFn: async (): Promise<foundIDType[]> => {
 			const { data } = await axios.get(
@@ -84,6 +85,13 @@ export default function EditFoundPage() {
 								size={15}
 							/>
 							{foundID.date_found}
+						</p>
+						<p className="flex justify-start items-center gap-2">
+							<Phone
+								color="white"
+								size={15}
+							/>
+							{foundID.phone_number}
 						</p>
 						<div className="flex gap-2">
 							<EditFound id={foundID.id!} />

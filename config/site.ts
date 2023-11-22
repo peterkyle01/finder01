@@ -20,6 +20,10 @@ export const siteConfig = {
 			label: "LostAndFound",
 			href: "/lost_and_found",
 		},
+		{
+			label: "Contact",
+			href: "/contact",
+		},
 	],
 	navMenuItems: [
 		{
@@ -38,6 +42,10 @@ export const siteConfig = {
 			label: "LostAndFound",
 			href: "/lost_and_found",
 		},
+		{
+			label: "Contact",
+			href: "/contact",
+		},
 	],
-	adminEmail:"susanoyole1234@gmail.com"
+	adminEmail: "susanoyole1234@gmail.com",
 };

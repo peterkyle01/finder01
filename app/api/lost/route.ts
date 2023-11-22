@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
 		time_lost: lostIDJson.time_lost,
 		location_lost: lostIDJson.location_lost,
 		date_lost: lostIDJson.date_lost,
+		phone_number:lostIDJson.phone_number
 	});
 
 	return NextResponse.json({ message: "Created a Lost ID!" });
@@ -32,6 +33,7 @@ export async function PATCH(request: NextRequest) {
 		time_lost,
 		location_lost,
 		date_lost,
+		phone_number
 	}: lostIDType = await request.json();
 
 	await db
@@ -42,6 +44,7 @@ export async function PATCH(request: NextRequest) {
 			time_lost: time_lost,
 			location_lost: location_lost,
 			date_lost: date_lost,
+			phone_number:phone_number
 		})
 		.where(eq(lostId.id, id));
 	return NextResponse.json({ message: "Updated successfully!" });

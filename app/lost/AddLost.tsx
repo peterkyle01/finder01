@@ -7,7 +7,7 @@ import {
 	ModalFooter,
 	useDisclosure,
 } from "@nextui-org/modal";
-import { ArrowDown01, Lock, MailIcon, MapPin, User } from "lucide-react";
+import { ArrowDown01, Lock, MailIcon, MapPin, Phone, User } from "lucide-react";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { useState } from "react";
@@ -24,6 +24,7 @@ export default function AddLost() {
 		time_lost: "",
 		location_lost: "",
 		date_lost: "",
+		phone_number: 0
 	});
 
 	const { mutate } = useMutation({
@@ -120,6 +121,23 @@ export default function AddLost() {
 											date_lost: e.target.value,
 										})
 									}
+								/>
+								<Input
+									endContent={
+										<Phone
+											color="white"
+											size={17}
+										/>
+									}
+									onChange={(e) =>
+										setFormData({
+											...formData,
+											phone_number: Number(e.target.value),
+										})
+									}
+									label="Phone Number"
+									placeholder="0712345678"
+									variant="bordered"
 								/>
 							</ModalBody>
 							<ModalFooter>

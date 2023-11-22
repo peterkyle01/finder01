@@ -45,7 +45,7 @@ export default function RootLayout({
 						permanent_marker.variable
 					)}>
 					<Providers themeProps={{ attribute: "class", enableSystem: true }}>
-						<div className="relative flex flex-col h-screen">
+						<div className="relative flex flex-col h-auto">
 							{/* @ts-ignore*/}
 							<Navbar />
 							<main className="w-full min-h-[80vh] px-2 md:px-6">{children}</main>
